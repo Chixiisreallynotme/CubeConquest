@@ -1,6 +1,6 @@
 # Cube Conquest
 
-Fabric mod for Minecraft 26.2. Two teams, two cubes, one rule: destroy theirs, protect yours. Red vs Blue, three-phase rounds, server-side state machine. Teams persist across restarts.
+Fabric mod for Minecraft 26.2. Two teams, two cubes, one rule: destroy theirs, protect yours. Red vs Blue, three-phase rounds.
 
 ## How a Round Works
 
@@ -50,7 +50,8 @@ Fabric mod for Minecraft 26.2. Two teams, two cubes, one rule: destroy theirs, p
 
 1. `./gradlew runServer` → connect locally
 2. `/cubeconquest team add <p1> red` then `<p2> blue`
-3. `/cubeconquest start` — inventories cleared, carriers get cubes, PvP off
-4. ~10s → PLACEMENT. Carriers place cubes.
-5. Enemy breaks a cube → victory → IDLE
-6. Restart server → `/cubeconquest team list` shows saved teams
+3. Configure preferences using the commands
+4. `/cubeconquest start` — inventories cleared, carriers get cubes, PvP off
+5. PREPARATION → PLACEMENT. Carriers place cubes.
+7. Enemy breaks a cube → victory → IDLE
+8. Restart server → `/cubeconquest team list` shows saved teams
