@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "cubeconquest",
+  "version": "${version}",
+  "name": "Cube Conquest",
+  "description": "Competitive minigame: destroy the enemy team's cube.",
+  "authors": ["Chixi"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["fr.chixi.cubeconquest.CubeConquestMod"],
+    "client": ["fr.chixi.cubeconquest.client.CubeConquestClient"]
+  },
+  "accessWidener": "cubeconquest.accesswidener",
+  "mixins": ["cubeconquest.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

@@ -1,0 +1,94 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+loom {
+    splitEnvironmentSourceSets()
+    accessWidenerPath = file("src/main/resources/cubeconquest.accesswidener")
+
+    mods {
+        cubeconquest {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+repositories {}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": inputs.properties.version
+    }
+}
+
+def javaRelease = JavaVersion.current().majorVersion.toInteger() >= 25 ? 25 : 21
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = javaRelease
+}
+
+// ponytail: MC jar is Java 25 bytecode; exclude MC-dependent sources when running on Java 21
+if (javaRelease < 25) {
+    compileJava.excludes += [
+        '**/CubeConquestSavedData.java',
+        '**/CubeConquestMod.java',
+        '**/CubeConquestGameManagerEvents.java',
+        '**/block/BlockIds.java',
+        '**/block/BlockItemIds.java',
+        '**/block/CubeBlock.java',
+        '**/item/TrackingCompassItem.java',
+        '**/network/CubePositionPayload.java',
+        '**/network/PlacementCountdownPayload.java',
+        '**/network/PlayerTeamPayload.java',
+        '**/command/CubeConquestCommand.java',
+        '**/mixin/PlayerDropItemMixin.java',
+    ]
+    compileClientJava.excludes += [
+        '**/client/CubeConquestClient.java',
+        '**/client/CubeConquestHud.java',
+        '**/client/TrackingCompassClientHandler.java',
+        '**/client/TrackingCompassPropertyHandler.java',
+    ]
+}
+
+java {
+    withSourcesJar()
+    def jv = javaRelease == 25 ? JavaVersion.VERSION_25 : JavaVersion.VERSION_21
+    sourceCompatibility = jv
+    targetCompatibility = jv
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    inputs.property "projectName", project.name
+    from("LICENSE") { rename { "${it}_${project.name}" } }
+}
+
+tasks.withType(JavaExec).configureEach {
+    doFirst {
+        jvmArgs = jvmArgs.findAll { !it.contains('--sun-misc-unsafe-memory-access') }
+    }
+}

@@ -1,0 +1,50 @@
+/cubeconquest team add Joueur2 red
+/cubeconquest start
+/cubeconquest team add Joueur1 blue
+/cubeconquest start
+/difficulty peaceful
+/cubeconquest stop
+/cubeconquest team add Joueur1 blue
+/cubeconquest team add Joueur2 red
+/time set minecraft:day
+/cubeconquest start
+/ff
+/cubeconquest start
+/draw
+/cubeconquest team add Joueur2 red
+/cubeconquest team add Joueur1 blue
+/cubeconquest start
+/difficulty peaceful
+/cubeconquest team add Joueur2 red
+/cubeconquest team add Joueur1 blue
+/cubeconquest stop
+/cubeconquest team add Joueur1 blue
+/cubeconquest team add Joueur2 red
+/cubeconquest start
+/cubeconquest stop
+/cubeconquest start
+/cubeconquest team add Joueur1 blue
+/cubeconquest team add Joueur2 red
+/cubeconquest start
+/cubeconquest stop
+/cubeconquest team add Joueur2 red
+/cubeconquest team add Joueur1 blue
+/cubeconquest start
+/give Joueur2 minecraft:diamond_pickaxe
+/cubeconquest start
+/cubeconquest stop
+/difficulty peaceful
+/give Joueur2 minecraft:obsidian 12
+/give Joueur2 minecraft:flint_and_steel
+/cubeconquest team add Joueur2 red
+/cubeconquest team add Joueur1 blue
+/cubeconquest overworldOnly false
+/cubeconquest waitForCountdown false
+/cubeconquest start
+/cubeconquest stop
+/difficulty peaceful
+/cubeconquest team add Joueur1 blue
+/cubeconquest team add Joueur2 red
+/cubeconquest stop
+/cubeconquest overworldOnly false
+/cubeconquest start

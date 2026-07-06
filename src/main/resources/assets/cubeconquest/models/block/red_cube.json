@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "cubeconquest:block/red_cube_top",
+    "bottom": "cubeconquest:block/red_cube_bottom",
+    "side": "cubeconquest:block/red_cube_side"
+  }
+}

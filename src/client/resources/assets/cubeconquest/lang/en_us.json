@@ -1,0 +1,19 @@
+{
+  "block.cubeconquest.red_cube": "Red Cube",
+  "block.cubeconquest.blue_cube": "Blue Cube",
+  "item.cubeconquest.tracking_compass": "Tracking Compass",
+  "cubeconquest.hud.timer": "Time: %s",
+  "cubeconquest.hud.place_cube": "Place your cube!",
+  "cubeconquest.hud.placement_countdown": "Place cube: %ss",
+  "cubeconquest.hud.team": "Team: %s",
+  "cubeconquest.hud.frozen": "You are frozen!",
+  "cubeconquest.command.started": "Game started!",
+  "cubeconquest.command.stopped": "Game stopped.",
+  "cubeconquest.command.team_added": "%s added to team %s.",
+  "cubeconquest.command.team_removed": "%s removed from team %s.",
+  "cubeconquest.command.already_running": "A game is already running.",
+  "cubeconquest.victory.red": "Red Team wins!",
+  "cubeconquest.victory.blue": "Blue Team wins!",
+  "cubeconquest.hud.compass_other_dimension": "Target: %s",
+  "cubeconquest.hud.compass_distance": "Distance: %s m"
+}

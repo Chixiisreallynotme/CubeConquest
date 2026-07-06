@@ -1,0 +1,4 @@
+accessWidener v2 official
+
+# ponytail: expose ID_MAPPER to register custom RangeSelectItemModelProperty
+accessible field net/minecraft/client/renderer/item/properties/numeric/RangeSelectItemModelProperties ID_MAPPER Lnet/minecraft/util/ExtraCodecs$LateBoundIdMapper;
