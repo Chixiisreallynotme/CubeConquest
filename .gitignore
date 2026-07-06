@@ -9,9 +9,3 @@ gradle/wrapper/gradle-*/
 bin/
 net/minecraft/**/*.class
 run/
-scratch/
-.claude/
-*.txt
-CLAUDE*.md
-changelog_*.md
-migration_*.md
