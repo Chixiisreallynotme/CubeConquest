@@ -1,6 +1,6 @@
 # Cube Conquest
 
-Fabric mod for Minecraft 26.2. Two teams, two cubes, one rule: destroy theirs, protect yours. Red vs Blue, three-phase rounds.
+Fabric mod for Minecraft. Two teams, two cubes, one rule: destroy theirs, protect yours. Red vs Blue, three-phase rounds.
 
 ## How a Round Works
 
